@@ -57,7 +57,9 @@ public class SeniorSort {
 		if(left>=right)return;
 		
 		int i = left,j= right,t;
-		 
+		
+		
+		
 		int temp = array[left];//保存基准值
 		
 		
@@ -87,5 +89,12 @@ public class SeniorSort {
 		QuickSort(array,i+1,right);
 		
 	}
+	
+	
+	//拿的java源码对比仨数字中位数
+	private static int med3(int x[], int a, int b, int c) {
+		return (x[a] < x[b] ? (x[b] < x[c] ? b : x[a] < x[c] ? c : a)
+		          : (x[b] > x[c] ? b : x[a] > x[c] ? c : a));
+    }
 	
 }
