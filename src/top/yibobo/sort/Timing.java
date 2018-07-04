@@ -17,6 +17,7 @@ public class Timing {
 		int[] array = getArray(num);
 		int[] array2 = Arrays.copyOf(array, num);
 		int[] array3 = Arrays.copyOf(array, num);
+		int[] array4 = Arrays.copyOf(array, num);
 		System.out.println("数组创建完毕");
 		long time1 = System.currentTimeMillis();
 		SeniorSort.ShellKnuthsSort(array);
@@ -25,10 +26,12 @@ public class Timing {
 		long time3 = System.currentTimeMillis();
 		SeniorSort.QuickSort(array3, 0, array.length-1);
 		long time4 = System.currentTimeMillis();
-		
+		new HeapSort().heapSort(array4);
+		long time5 = System.currentTimeMillis();
 		System.out.println(num+"数字级的希尔排序毫秒值:"+(time2-time1));
 		System.out.println(num+"数字级java自带Arrays.sort排序:"+(time3-time2));
 		System.out.println(num+"数字级快速排序:"+(time4-time3));
+		System.out.println(num+"数字级堆排序:"+(time5-time4));
 		
 	}
 	
