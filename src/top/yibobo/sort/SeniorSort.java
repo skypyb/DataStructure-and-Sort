@@ -9,8 +9,12 @@ public class SeniorSort {
 		
 		
 		int[] arrays = {78,15,6,4,16,11,3,5,41,54,24,54,22,38,46};
+		int[] arrays2 = {76,12,16,74,56,15,45,54,71,34,44,2,277,43,80,4,78,2,6};
+		
 		QuickSort(arrays,0,arrays.length-1);
-		System.out.println(Arrays.toString(arrays));
+		QuickSort(arrays2,0,arrays2.length-1);
+		
+		System.out.println(Arrays.toString(MergeSort(arrays, arrays2)));
 		
 	}
 	
@@ -91,10 +95,42 @@ public class SeniorSort {
 	}
 	
 	
-	//拿的java源码对比仨数字中位数
+	//归并排序，需要俩有序数组，将其变为一个有序数组。，也就是归并
+	public static int[] MergeSort(int[] a,int[] b) {
+		
+		int[] c = new int[a.length+b.length];//最后要返回的合并数组
+		
+		int aNum=0,bNum=0,cNum=0;//将两边的长度、和最终数组的指针初始化
+		
+		
+		while(aNum<a.length && bNum<b.length) {//循环赋值给c数组，直到有一边全部赋值完毕
+			
+			if(a[aNum]<=b[bNum]) {//把小的那边赋值给c数组
+				c[cNum++] = a[aNum++];//++只有在运算完毕后才会自增
+			}else {
+				c[cNum++] = b[bNum++];
+			}
+		}
+		
+		while(a.length==aNum&&b.length>bNum) {//a已经赋值完毕，所以要把b剩下的全部加进去
+			c[cNum++] = b[bNum++];
+		}
+		while(b.length==bNum&&a.length>aNum) {//b已经赋值完毕，所以要把a剩下的加进去
+			c[cNum++] = a[aNum++];			
+		}
+		
+		
+		
+		
+		return c;
+	}
+	
+	
+	
+	/*//拿的java源码对比仨数字中位数
 	private static int med3(int x[], int a, int b, int c) {
 		return (x[a] < x[b] ? (x[b] < x[c] ? b : x[a] < x[c] ? c : a)
 		          : (x[b] > x[c] ? b : x[a] > x[c] ? c : a));
-    }
+    }*/
 	
 }

@@ -19,7 +19,7 @@ public class Timing {
 		int[] array3 = Arrays.copyOf(array, num);
 		System.out.println("数组创建完毕");
 		long time1 = System.currentTimeMillis();
-		//SeniorSort.ShellKnuthsSort(array);
+		SeniorSort.ShellKnuthsSort(array);
 		long time2 = System.currentTimeMillis();
 		Arrays.sort(array);
 		long time3 = System.currentTimeMillis();
