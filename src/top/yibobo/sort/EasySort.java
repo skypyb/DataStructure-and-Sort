@@ -50,7 +50,6 @@ public class EasySort {
 				array[min] = temp;
 			}
 			
-			
 		}
 	}
 	

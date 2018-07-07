@@ -11,7 +11,9 @@ public class SeniorSort {
 		int[] arrays = {78,15,6,4,16,11,3,5,41,54,24,54,22,38,46};
 		int[] arrays2 = {76,12,16,74,56,15,45,54,71,34,44,2,277,43,80,4,78,2,6};
 		
-		QuickSort(arrays,0,arrays.length-1);
+		
+		//希尔快排归并三合一大套餐
+		ShellKnuthsSort(arrays);
 		QuickSort(arrays2,0,arrays2.length-1);
 		
 		System.out.println(Arrays.toString(MergeSort(arrays, arrays2)));
@@ -61,12 +63,7 @@ public class SeniorSort {
 		if(left>=right)return;
 		
 		int i = left,j= right,t;
-		
-		
-		
 		int temp = array[left];//保存基准值
-		
-		
 		
 		while(i != j) {
 			
