@@ -23,8 +23,6 @@ public class LeetCode1 {
         map.put("D",5);
         map.put("M",6);
         
-        
-        
 	}
 	
 	//两数之和1
