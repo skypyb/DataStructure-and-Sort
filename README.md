@@ -5,12 +5,14 @@
 ## change log  
 
 #### v1.1.0(2018-07-16 10:23)  
-又做了几道题，在LeetCode3.java  
-话说我排名到20000名以内了www 
+做了这些题，在LeetCode3.java  
 26. 删除排序数组中的重复项  
 27. 移除元素  
-28. 实现strStr(),哇这题目我错了好多遍才提交对，心塞，还是挺难的，用时7ms   
-看了一下最快的，只有3ms，点进去一看代码 return haystack.indexOf(needle);这也太秀了吧   
+28. 实现strStr(),哇这题目我错了好多遍才提交对，心塞，还是挺难的  
+35. 搜索插入位置   
+话说我排名到20000名以内了www  
+  
+28题我看了一下最快的，只有3ms，点进去一看代码 return haystack.indexOf(needle);这也太秀了吧   
 又看了个5ms的，这哥们用subString()来对比，过分了Σ(っ°Д°;)っ  
 
   <br>
