@@ -14,7 +14,7 @@ public class SeniorSort {
 		
 		//希尔快排归并三合一大套餐
 		ShellKnuthsSort(arrays);
-		QuickSort(arrays2,0,arrays2.length-1);
+		quickSort(arrays2,0,arrays2.length-1);
 		
 		System.out.println(Arrays.toString(MergeSort(arrays, arrays2)));
 		
@@ -129,5 +129,38 @@ public class SeniorSort {
 		return (x[a] < x[b] ? (x[b] < x[c] ? b : x[a] < x[c] ? c : a)
 		          : (x[b] > x[c] ? b : x[a] > x[c] ? c : a));
     }*/
+	
+	
+	public static void quickSort(int[] arr , int left , int right) {
+		if(left >= right) return;
+		
+		int i = left , j = right , t ; 
+		
+		int temp = arr[left] ; 
+		
+		while (i!=j) {
+			
+			while(i<j && arr[j] >= temp ) {
+				j--;
+			}
+			while(i <j && arr[i] <=temp) {
+				i++;
+			}
+			
+			if(i<j) {
+				t = arr[j];
+				arr[j] = arr[i];
+				arr[i] = t;
+			}
+		}
+		
+		arr[left] = arr[i];
+		arr[i] = temp;
+		
+		quickSort(arr,left,i);
+		quickSort(arr,i+1,right);
+		
+	}
+	
 	
 }
