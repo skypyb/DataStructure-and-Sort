@@ -54,13 +54,14 @@ public final class SortContext {
 
         if (print) System.out.println(Arrays.toString(arr));
 
+        Long m = System.currentTimeMillis();
         algorithm.sort(arr);
 
         if (print) System.out.println(Arrays.toString(arr));
 
-
+        long time = System.currentTimeMillis() - m;
         System.out.println();
-        System.out.printf("Sort end, swap num: %s, less num: %s. ", swapNum, lessNum);
+        System.out.printf("Sort end, spend time: %sms, swap num: %s, less num: %s. ", time, swapNum, lessNum);
         System.out.println();
 
         this.swapNum = 0;

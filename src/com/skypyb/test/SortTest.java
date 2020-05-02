@@ -9,7 +9,7 @@ public class SortTest {
     public static void main(String[] args) {
 
         SortContext sortContext = new SortContext(new Selection());
-        sortContext.printArray(true).randomIntegerArray(50).sort();
+        sortContext.printArray(false).randomIntegerArray(50000).sort();
 
     }
 }
