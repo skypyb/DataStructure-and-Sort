@@ -15,8 +15,10 @@ public class ListReverse {
         d.next = e;
 
         System.out.println(a);
-//        System.out.println(reverse1(a));
-        System.out.println(reverse2(a));
+        a = reverse1(a);
+        System.out.println(a);
+        a = reverse2(a);
+        System.out.println(a);
     }
 
     //反转链表
