@@ -1,25 +1,13 @@
 package com.skypyb.test;
 
+import com.skypyb.structure.SNode;
+
 public class ListReverse {
-
-    static class Node<E> {
-        private E item;
-        private Node<E> next;
-
-        Node(E item) {
-            this.item = item;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("%s : %s", item, next);
-        }
-    }
 
 
     public static void main(String[] args) {
 
-        Node<Integer> a = new Node(1), b = new Node(2), c = new Node(3), d = new Node(4), e = new Node(5);
+        SNode<Integer> a = new SNode(1), b = new SNode(2), c = new SNode(3), d = new SNode(4), e = new SNode(5);
 
         a.next = b;
         b.next = c;
@@ -32,13 +20,13 @@ public class ListReverse {
     }
 
     //反转链表
-    public static Node reverse1(Node x) {
+    public static SNode reverse1(SNode x) {
 
-        Node first = x; //开头节点
-        Node current = null; //当前链表
+        SNode first = x; //开头节点
+        SNode current = null; //当前链表
 
         while (first != null) {
-            Node temp = first.next; //先保存下一个节点
+            SNode temp = first.next; //先保存下一个节点
 
             first.next = current;
             current = first;
@@ -50,11 +38,11 @@ public class ListReverse {
     }
 
     //反转链表(递归)
-    public static <E> Node<E> reverse2(Node<E> x) {
+    public static <E> SNode<E> reverse2(SNode<E> x) {
 
         if (x == null || x.next == null) return x;
 
-        Node r = reverse2(x.next);
+        SNode r = reverse2(x.next);
         x.next.next = x;
         x.next = null;
 
