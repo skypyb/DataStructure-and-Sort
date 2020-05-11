@@ -44,10 +44,18 @@ public final class SortContext {
         return this;
     }
 
+    public SortContext algorithm(SortAlgorithm algorithm) {
+        algorithm.setContext(this);
+        this.algorithm = algorithm;
+        return this;
+    }
 
     public void sort() {
-        System.out.printf("Sort start, algorithm: %s, array type: %s.",
-                this.algorithm.getClass().getSimpleName(), arr.getClass().getComponentType().getTypeName());
+
+        Comparable[] arr = Arrays.copyOf(this.arr, this.arr.length);
+
+        System.out.printf("Sort start, algorithm: %s, array type: %s, array length:%s.",
+                this.algorithm.getClass().getSimpleName(), this.arr.getClass().getComponentType().getTypeName(), arr.length);
 
         System.out.println();
         System.out.println();
